@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Top 5 Restaurants to Try";
+}
+@model IEnumerable<string>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width-device-width"/>
+</head>
+<body>
+    <div class="text-center">
+        <h3>Suggested by Samantha Berg</h3>
+
+        <img src="~/img/food.png" height=300 />
+        <br />
+        <br />
+        <div class="list-group">
+            <ul>
+                <!--Display top 5 restaurants-->
+                @foreach (string i in Model)
+                {
+                    <li class="list-group-item">@Html.Raw(i)</li>
+                }
+            </ul>
+        </div>
+        
+        <br />
+        <a class="btn btn-dark" asp-action="SuggestionBox">Add to the List</a>
+    </div>
+
+    
+</body>
+</html>
